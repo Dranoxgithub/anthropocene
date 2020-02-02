@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Teko|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+<h1>In Anthropocene</h1>
+
+
+<h2>What is In Anthropocene?</h2>
+
+<div id = "context-information">
+Anthropocene is a website that helps predict the severity of forest fires in California as you key in various factors associated with fire spreading such as humidity, temperature. It is powered by a Machine Learning model that we construct based on all the past forest fires data in California since 2001. With this platform, firefighting forces can better anticipate the severity of a forest fire and thus better manage available resources to combat fires. 
+<h2> How to use In Anthropocene? </h2>
+<div id = "how-to">
+Simply choose a point on the map and fill up the form below. 
+</div><br><br>
+
+<div id = "maps">
+<input id="pac-input" class="controls form-control" type="text" placeholder="Search a place in California" aria-label="Search">
+<div id="map"></div>
+    <script src="inanthro.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCFhAyHHPD4Agqy-Egw-qAQOKF8hYzfib0&callback=initMap"
+    async defer></script>
+
+</div>
+
+
+<div class = 'form-style'>
+<form id = "form" action = "" method = "POST" name = "form">
+    Month :
+    <div class = "select-style"> 
+    <select id = 'month'>
+        <option> January </option>
+        <option> February </option>
+        <option> March </option>
+        <option> April </option>
+        <option> May </option>
+        <option> June </option>
+        <option> July </option>
+        <option> August </option>
+        <option> September </option>
+        <option> October </option>
+        <option> November </option>
+        <option> December </option>
+    </select>
+    </div>
+    <br>
+    
+    <label for="max T"> Maximum Temperature(&#8451) : </label>
+    <input type="text" name="max T" id="max T">  <br>
+    
+    <label for="min T"> Minimum Temperature(&#8451) : </label>
+    <input type="text" name="min T" id="min T">  <br>
+
+    <label for="max H"> Maximum Humidity(%) : </label>
+    <input type="text" name="max H" id="max H">  <br>
+
+    <label for="min H"> Minimum Humidity(%) : </label>
+    <input type="text" name="min H" id="min H">  <br>
+
+    Wind Direction :
+    <div class = "select-style">
+    <select id = "direction">
+        <option> North </option>
+        <option> Northeast </option>
+        <option> East </option>
+        <option> Southeast </option>
+        <option> South </option>
+        <option> Southwest </option>
+        <option> West </option>
+        <option> Northwest </option>
+    </select> 
+    </div>
+    <br>
+    <label for="windspeed"> Wind Speed(meters/second) :</label>
+    <input type="number" required id="windspeed">  <br>
+
+    <label for="percipitation"> Percipitation(millimeters) :</label>
+    <input type="number" required id="percipitation"> <br>
+
+    <label for="latitude"> Latitude : </label>
+    <input required placeholder="Please click at anywhere on the map" type="text" name="latitude" id="latitude" disabled=true> <br>
+
+    <label for="longtitude"> Longtitude : </label>
+    <input required placeholder="Please click at anywhere on the map" type="text" name="longtitude" id="longtitude" disabled=true> <br>
+    
+    County :
+    <div class = "select-style">
+    <select id = 'county' disabled>
+        <option> Alameda </option>
+        <option> Alpine </option>
+        <option> Amador </option>
+        <option> Butte </option>
+        <option> Calaveras </option>
+        <option> Colusa </option>
+        <option> Contra Costa </option>
+        <option> Del Norte </option>
+        <option> EI Dorado </option>
+        <option> Fresno </option>
+        <option> Glenn </option>
+        <option> Humboldt </option>
+        <option> Imperial </option>
+        <option> Inyo </option>
+        <option> Kern </option>
+        <option> Kings </option>
+        <option> Lake </option>
+        <option> Lassen </option>
+        <option> Los Angeles </option>
+        <option> Madera </option>
+        <option> Marin </option>
+        <option> Mariposa </option>
+        <option> Mendocino </option>
+        <option> Merced </option>
+        <option> Modoc </option>
+        <option> Mono </option>
+        <option> Monterey </option>
+        <option> Napa </option>
+        <option> Nevada </option>
+        <option> Orange </option>
+        <option> Placer </option>
+        <option> Plumas </option>
+        <option> Riverside </option>
+        <option> Sacramento </option>
+        <option> San Benito </option>
+        <option> San Bernardino </option>
+        <option> San Diego </option>
+        <option> San Francisco </option>
+        <option> San Joaquin </option>
+        <option> San Luis Obispo </option>
+        <option> San Mateo </option>
+        <option> Santa Barbara </option>
+        <option> Santa Clara </option>
+        <option> Santa Cruz </option>
+        <option> Shasta </option>
+        <option> Sierra </option>
+        <option> Siskiyou </option>
+        <option> Solano </option>
+        <option> Sonoma </option>
+        <option> Stanislaus </option>
+        <option> Sutter </option>
+        <option> Tehama </option>
+        <option> Trinity </option>
+        <option> Tulare </option>
+        <option> Tuolumne </option>
+        <option> Ventura </option>
+        <option> Yolo </option>
+        <option> Yuba </option>
+    </select>
+    </div>
+    <br>
+    
+    <a href = "#map"><input type = "button" value = "Submit" onclick= "calculatefunc()"> </a> <br><br>
+
+    <input type="reset"/>
+
+
+</form>
+</div>
+
+
+<h2 id ="behind"> 
+Behind the simple click</h2>
+
+<p>
+    1. We first scraped data of California wildfire from different reliable websites including University of California Integrated Pest Management Program and California Department of Forestry and Fire Protection, which are presented in different data formats. 
+</p>
+<p>   
+    2. We then concatenate all data obtained and created a data set with forest fire incidents in California over the past six years using Python. 
+</p>   
+<p> 3. After wrangling the data, we applied principal component analysis (PCA) and built several models predicting the severity of a forest fire, including random forest, polynomial regression, and neural networks.
+
+</p> 
+<p>
+    4. Using log cosh loss function, the neural network was chosen as it has the best overall performance on the test set. We then built the website referencing to the model to visualize our results.
+</p>
+
+
+</body>
+</html>
