@@ -33,5 +33,3 @@ Besides, we would also want to extend the scope to include all U.S. territories 
 
 Built with:
 JavaScript, HTML, CSS, Python, Google Cloud, Google Map
-
-
