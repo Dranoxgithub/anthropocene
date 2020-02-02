@@ -1,4 +1,7 @@
 # anthropocene
+FOR USERS:
+As we did not purchase webhosting service, please download the zip file and you will see the website when you click on the HTML link inside the file. 
+
 Inspiration:
 
 According to a research done by National Research Council, an increase on average of temperature of 1 Celsius is expected to multiply the area burned in the West by several-fold. We need a way to better handle forest fires because 1) it itself is a huge source of carbon dioxide emissions, worsening global warming 2) It poses threats to wildlife and people’s properties. Better prediction on the severity of fires beforehand would allow better allocation of resources such as coordination of help between firefighting forces across different counties.  Hence, we are inspired to construct this website. 
